@@ -1,1 +1,402 @@
 
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EAJ-PNV Ataun. Herritik, herriarentzat.">
+  <title>EAJ-PNV Ataun | Herritik, herriarentzat</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #202820;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    :root {
+      --green: #08743b;
+      --dark-green: #07552e;
+      --light-green: #f1f7f2;
+      --text: #26332a;
+    }
+
+    .topbar {
+      background: var(--dark-green);
+      color: white;
+      text-align: center;
+      padding: 8px 15px;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+
+    header {
+      background: white;
+      border-bottom: 1px solid #e8ece8;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .brand {
+      text-decoration: none;
+      color: var(--dark-green);
+      font-size: 23px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .brand span {
+      color: var(--green);
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--green);
+    }
+
+    .hero {
+      background: linear-gradient(120deg, #f1f7f2, #ffffff);
+      padding: 105px 25px 110px;
+    }
+
+    .hero-content {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 6vw, 68px);
+      line-height: 1.1;
+      letter-spacing: -2px;
+      max-width: 750px;
+      margin-bottom: 25px;
+      color: #173d29;
+    }
+
+    .hero p {
+      max-width: 600px;
+      color: #5b665e;
+      font-size: 18px;
+      margin-bottom: 35px;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--green);
+      color: white;
+      padding: 14px 25px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      transition: background 0.2s;
+    }
+
+    .button:hover {
+      background: var(--dark-green);
+    }
+
+    section {
+      padding: 85px 25px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 34px;
+      color: #173d29;
+      margin-bottom: 15px;
+      letter-spacing: -1px;
+    }
+
+    .section-intro {
+      color: #68736b;
+      max-width: 650px;
+      margin-bottom: 40px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      padding: 30px;
+      background: white;
+      border: 1px solid #e6ebe6;
+      border-radius: 6px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    }
+
+    .card-number {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 18px;
+      letter-spacing: 1px;
+    }
+
+    .card h3 {
+      font-size: 21px;
+      margin-bottom: 12px;
+      color: #173d29;
+    }
+
+    .card p {
+      color: #68736b;
+      font-size: 15px;
+    }
+
+    .about {
+      background: var(--light-green);
+    }
+
+    .about-content {
+      max-width: 750px;
+    }
+
+    .about-content p {
+      color: #56635a;
+      font-size: 17px;
+      margin-top: 15px;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact p {
+      color: #68736b;
+      margin: 15px auto 25px;
+      max-width: 550px;
+    }
+
+    footer {
+      background: #173d29;
+      color: white;
+      padding: 35px 25px;
+    }
+
+    .footer-content {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    footer p {
+      font-size: 13px;
+      color: #d5e3d9;
+    }
+
+    @media (max-width: 750px) {
+      .navbar {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .hero {
+        padding: 75px 22px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 65px 22px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    EAJ-PNV ATAUN · HERRITIK, HERRIARENTZAT
+  </div>
+
+  <header>
+    <div class="navbar">
+      <a href="#" class="brand">EAJ-PNV <span>ATAUN</span></a>
+
+      <nav>
+        <a href="#hasiera">Hasiera</a>
+        <a href="#nor-gara">Nor gara?</a>
+        <a href="#udala">Udaleko jarduera</a>
+        <a href="#proposamenak">Proposamenak</a>
+        <a href="#harremana">Harremana</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero" id="hasiera">
+      <div class="hero-content">
+        <div class="eyebrow">EAJ-PNV ATAUN</div>
+
+        <h1>Herritik, herriarentzat.</h1>
+
+        <p>
+          Ataun hobe baten alde lan egiten dugu.
+          Herritarrak entzunez, ideiak partekatuz
+          eta gure herriaren etorkizuna eraikiz.
+        </p>
+
+        <a href="#nor-gara" class="button">Ezagutu gaitzazu</a>
+      </div>
+    </section>
+
+    <section id="nor-gara">
+      <div class="container">
+        <h2 class="section-title">Nor gara?</h2>
+
+        <p class="section-intro">
+          Ataungo EAJ-PNV. Gure herriarekiko konpromisoa,
+          gertutasuna eta lan egiteko borondatea.
+        </p>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card-number">01 / GERTUTASUNA</div>
+            <h3>Herritarrak entzun</h3>
+            <p>
+              Herritarren kezkak, ideiak eta proposamenak
+              ezagutzea da gure lanaren abiapuntua.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-number">02 / KONPROMISOA</div>
+            <h3>Herriaren alde lan egin</h3>
+            <p>
+              Ataunen ongizatea eta garapena sustatzeko
+              konpromisoa dugu.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-number">03 / ETORKIZUNA</div>
+            <h3>Aurrera begiratu</h3>
+            <p>
+              Ideia eta proposamen berriekin,
+              Ataunen etorkizuna eraikitzen lagundu nahi dugu.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="udala">
+      <div class="container about-content">
+        <div class="eyebrow">GURE LANA</div>
+        <h2 class="section-title">Udaleko jarduera</h2>
+        <p>
+          Udalean egiten dugun lana, aurkezten ditugun
+          ekimenak, mozioak eta proposamenak.
+          Ataunen aldeko gure jardueraren berri emango dugu hemen.
+        </p>
+      </div>
+    </section>
+
+    <section id="proposamenak">
+      <div class="container">
+        <div class="eyebrow">ATAUNEN ETORKIZUNA</div>
+        <h2 class="section-title">Gure proposamenak</h2>
+        <p class="section-intro">
+          Ataun hobetzeko ideiak, proiektuak eta ekimenak.
+          Herriaren beharrei erantzuteko proposamenak.
+        </p>
+      </div>
+    </section>
+
+    <section class="contact" id="harremana">
+      <div class="container">
+        <div class="eyebrow">ZURE IRITZIA GARRANTZITSUA DA</div>
+        <h2 class="section-title">Jarri gurekin harremanetan</h2>
+        <p>
+          Baduzu proposamenik, galderarik edo gurekin
+          partekatu nahi duzun gairik? Zure ekarpenak entzun nahi ditugu.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <strong>EAJ-PNV ATAUN</strong>
+      <p>© 2026 EAJ-PNV Ataun. Eskubide guztiak erreserbatuta.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
+
